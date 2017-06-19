@@ -1,10 +1,13 @@
 # Pylenium
-> A series of automation stuff
+> What if you can order the machine to do things automatically?
 
-What if you can order the machine to do things automatically?
+Pylenium is my 'study-the-examples' series of automation scripted in python. Projects uploaded/released here are examples how certain automation can be done in python using 3rd-party libraries.
 
-## To do
-* Web-scraping series
-* Using Selenium
-* Bots
+## Examples
+* Web Scraping/Crawling
+* Selenium Automation
+* Creating an AI Bot
 * Many others..
+
+## Completed
+* Steam Automation
