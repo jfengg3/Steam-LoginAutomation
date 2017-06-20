@@ -1,13 +1,7 @@
-# Pylenium
-> What if you can order the machine to do things automatically?
+# Steam Login Automation
+> Runs and login into Steam.exe automatically when script is run.
 
-Pylenium is my 'study-the-examples' series of automation scripted in python. Projects uploaded/released here are examples how certain automation can be done in python using 3rd-party libraries.
+This is part of my 'study-the-examples' series, of how certain things can be done in python through 3rd-party libraries. Scripts are designed as accord to me, and not for client use. You can however download and edit them to work on your computer.
 
-## Examples
-* Web Scraping/Crawling
-* Selenium Automation
-* Creating an AI Bot
-* Many others..
-
-## Completed
-* Steam Automation
+## Documentation
+- To be done soon
