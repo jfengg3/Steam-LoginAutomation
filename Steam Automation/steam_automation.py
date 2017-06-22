@@ -1,40 +1,48 @@
 import pyautogui, subprocess, time, sys, json
 
+# Checks if there is any accounts in login.data
+# If exists, continue, else terminate with 'No active accounts found'
 try:
     with open('login.data', 'r') as d:
         credentials = json.load(d)
     d.close()
 
     pyautogui.FAILSAFE = True
+    # Get steam.exe path and launch it
     print('Launching Steam.exe...')
     path = ['C:\Program Files (x86)\Steam\Steam.exe']
     run_prog = subprocess.Popen(path)
 
-    #Automation
+    # Automation
     print("1 active account found. Getting it's credentials..")
     time.sleep(1)
     print("Uid of account founded is, "+credentials[0])
     time.sleep(4)
-    x, y = 960, 455
+
+    x, y = 960, 455 # Get coordintates of username input
     pyautogui.doubleClick(x, y, button='left')
     pyautogui.typewrite(credentials[1])
     print('Entering username... '+str(len(credentials[1]))+" length")
-    x, y = 960, 489
+
+    x, y = 960, 489 # Get coordinates of password input
     pyautogui.click(x, y, clicks=1, button='left')
     pyautogui.typewrite(credentials[2])
     print('Entering password...'+str(len(credentials[2]))+" length")
     pyautogui.typewrite(['enter'])
     time.sleep(2)
 
-    #if steam guard
+    # If steam guard detected on the account
     sguard_found = pyautogui.locateOnScreen('sguard.png')
     if sguard_found is not None:
         print('This account seems to be running on an authorization.')
         time.sleep(0.5)
         print('Searching for any available backup codes in PC..')
         time.sleep(0.5)
+        # We used 'READ FILE' method to retrieve our steam codes
+        # If exists, continue, else terminate with 'No backup codes found'
         try:
-            x, y = 1068, 588
+
+            x, y = 1068, 588 # Get coordinates of steam guard input
             code_path = 'C:\\Users\\admin\\Desktop\\codes.txt'
 
             with open(code_path, 'r') as f:
@@ -44,18 +52,17 @@ try:
                     codes = line.split('\n')
                     codelist.append(codes[0])
                 print("File is holding " + str(len(codelist)) + " backup codes.")
-                #Getting first code in the list
-                getCode = codelist[0]
+                getCode = codelist[0] # Get the first code of the list
                 pyautogui.click(x, y, clicks=1, button='left')
                 pyautogui.typewrite(getCode)
                 pyautogui.typewrite(['enter'])
-                #Removing used code
-                codelist.pop(0)
-                #Updating codelist
+                codelist.pop(0) # Removing the code since it's gonna be used
+
+                # Updating codelist by re-writing the file
                 codes = ""
                 for code in codelist:
                     codes += code + "\n"
-                with open('C:\\Users\\admin\\Desktop\\codes.txt', 'w') as d:
+                with open(code_path, 'w') as d:
                     d.write(codes)
                 time.sleep(0.5)
                 print('Done..! Logging-in.')
