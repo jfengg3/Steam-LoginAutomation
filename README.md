@@ -15,7 +15,8 @@ Also note for accounts with steam guard which requires code authentication, I ha
 
 This script can only assign one 'backup codes' text file to an account only! If more than one account requires authentication, it will not work flawlessly.
 
-(Codes must be written the following way)
+Codes must be written the following way:
+
 ![image](http://i.imgur.com/lUa5zT9.png)
 
 #### !Note, before compiling the source
