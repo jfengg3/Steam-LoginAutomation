@@ -22,8 +22,8 @@ Codes must be written the following way:
 #### !Note, before compiling the source
 1. Setting the paths to locate
    * Open steam_automation.py
-   * See line 10 > Set your steam.exe path (Eg. 'C:\Program Files (x86)\Steam\Steam.exe')
-   * See line 38 > Set your 'backup codes' path (Eg. 'C:\\Users\\admin\\Desktop\\codes.txt')
+   * See line 13 > Set your steam.exe path (Eg. 'C:\Program Files (x86)\Steam\Steam.exe')
+   * See line 49 > Set your 'backup codes' path (Eg. 'C:\\Users\\admin\\Desktop\\codes.txt')
 2. Setting up accounts to run automation
    * Run script steam_accounts.py
    * Start adding as many steam accounts you wish
