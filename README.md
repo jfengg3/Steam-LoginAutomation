@@ -38,3 +38,6 @@ Codes must be written the following way:
 1. Make sure no existing steam processes are running
 2. Run the script
 3. It will automate the whole login process for you correspond to your active account
+
+### To-do
+* Get and set the coordinates automatically
